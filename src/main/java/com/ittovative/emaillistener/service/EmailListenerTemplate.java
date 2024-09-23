@@ -21,7 +21,3 @@ public class EmailListenerTemplate {
         }
     }
 }
-
-//DummyFilter1 DummyAction1
-//DummyFilter1 DummyAction2
-//
