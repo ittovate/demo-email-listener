@@ -1,5 +1,5 @@
 # Email Listener Demo
-## This is an Email Listener library demo which enables you to have your own filtering and processing logic over at incoming emails in your inbox folder. Currently there is a dummy filter and dummy action **explained in details in `USAGE.md` but in order to get the most out of this library you must use your own logic to customize it.
+## This is an Email Listener library demo which enables you to have your own filtering and processing logic over at incoming emails in your inbox folder. Currently there is a dummy filter and dummy action **explained in details in `USAGE.md`** but in order to get the most out of this library you must use your own logic to customize it.
 
 # Prerequisites:
 - Java 21
