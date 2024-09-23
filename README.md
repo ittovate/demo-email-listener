@@ -24,6 +24,8 @@ MAIL_TRANSPORT_PROTOCOL=imaps
 ### In order to get your mail username and password in Gmail for example you must create an app password ---> [How to get application credentials in Gmail](https://www.youtube.com/watch?v=74QQfPrk4vE)
 
 ### After this you are set to go and you can build and run the application using the following command 
-`mvn clean install`
+`mvn clean package`
+### This should make a new `.jar` file inside the build folder `target` so you can run it using the following command
+`java -jar target/email-listener-0.0.1-SNAPSHOT.jar`
 ### If you are using your IDE you can just run it without this command but be sure to have Java 21 running
 
