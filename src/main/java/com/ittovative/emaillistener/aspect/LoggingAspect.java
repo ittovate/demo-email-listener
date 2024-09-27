@@ -22,7 +22,7 @@ public class LoggingAspect {
      * @param joinPoint which contains details about method called
      * @return the return value of the method
      */
-    @Around("execution(* com.ittovative.emaillistener.*.*.*(..))")
+    @Around("execution(* com.ittovative.emaillistener..*.*.*(..))")
     public Object log(ProceedingJoinPoint joinPoint) throws Throwable {
         String className = getClassName(joinPoint);
         String methodName = getMethodName(joinPoint);
