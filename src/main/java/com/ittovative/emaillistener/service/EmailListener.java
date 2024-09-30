@@ -7,6 +7,9 @@ import org.eclipse.angus.mail.imap.IMAPFolder;
 
 import java.util.Set;
 
+import static com.ittovative.emaillistener.constant.ConfigConstants.IMAPS;
+import static com.ittovative.emaillistener.constant.ConfigConstants.INBOX_FOLDER;
+
 public class EmailListener extends MessageCountAdapter {
     private final Session session;
     private final String username;
@@ -45,10 +48,10 @@ public class EmailListener extends MessageCountAdapter {
     }
 
     public void startListening() throws MessagingException {
-        Store store = session.getStore("imaps");
+        Store store = session.getStore(IMAPS);
         store.connect(username, password);
 
-        IMAPFolder inboxFolder = (IMAPFolder) store.getFolder("INBOX");
+        IMAPFolder inboxFolder = (IMAPFolder) store.getFolder(INBOX_FOLDER);
         inboxFolder.open(Folder.READ_ONLY);
 
         addFolderListener(inboxFolder);

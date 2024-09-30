@@ -6,6 +6,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
+import static com.ittovative.emaillistener.constant.AOPConstant.LOGGING_MESSAGE;
+
 @Primary
 @Component
 public class DummyLoggerAction implements IAction {
@@ -13,6 +15,6 @@ public class DummyLoggerAction implements IAction {
 
     @Override
     public void doAction(Message message) {
-        logger.info("Logging the message! " + message);
+        logger.info(LOGGING_MESSAGE + message);
     }
 }

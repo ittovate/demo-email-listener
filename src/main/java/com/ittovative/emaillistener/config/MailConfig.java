@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Configuration;
 import java.util.HashSet;
 import java.util.Properties;
 
+import static com.ittovative.emaillistener.constant.ConfigConstants.*;
+
 @Configuration
 public class MailConfig {
 
@@ -27,9 +29,9 @@ public class MailConfig {
     @Bean
     public Session mailSession() {
         Properties props = new Properties();
-        props.setProperty("mail.store.protocol", "imaps");
-        props.setProperty("mail.imaps.host", emailHost);
-        props.setProperty("mail.imaps.port", port);
+        props.setProperty(PROTOCOL_PROPERTY, IMAPS);
+        props.setProperty(HOST_PROPERTY, emailHost);
+        props.setProperty(PORT_PROPERTY, port);
 
         Session session = Session.getInstance(props);
         session.setDebug(true);

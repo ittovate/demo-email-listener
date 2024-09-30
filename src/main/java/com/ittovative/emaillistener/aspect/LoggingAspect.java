@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import static com.ittovative.emaillistener.constant.AOPConstant.*;
 import static com.ittovative.emaillistener.util.AspectUtil.*;
 
 
@@ -29,15 +30,15 @@ public class LoggingAspect {
         StringBuilder args = getMethodArgs(joinPoint);
         Object returnVal = null;
 
-        LOGGER.info("Executing ===> {}.{} with arguments: [{}]", className, methodName, args);
+        LOGGER.info(EXECUTING_METHOD, className, methodName, args);
         try {
             returnVal = joinPoint.proceed();
         } catch (Throwable throwable) {
             throwable.printStackTrace();
-            LOGGER.error("Exception {} in ===> {}.{} with arguments: [{}]", throwable, className, methodName, args);
+            LOGGER.error(EXECUTING_EXCEPTION, throwable, className, methodName, args);
             throw throwable;
         }
-        LOGGER.info("Finished ===> {}.{} with arguments: [{}] and returned {}", className, methodName, args, returnVal);
+        LOGGER.info(EXECUTING_FINISHED, className, methodName, args, returnVal);
 
         return returnVal;
     }
